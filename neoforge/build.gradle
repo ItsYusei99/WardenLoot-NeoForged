@@ -1,0 +1,87 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.147'
+}
+
+group = project.maven_group
+version = project.mod_version
+base {
+    archivesName = project.archives_name
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.theillusivec4.top/' }
+}
+
+dependencies {
+    compileOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1'
+    runtimeOnly 'top.theillusivec4.curios:curios-neoforge:9.5.1+1.21.1'
+}
+
+neoForge {
+    version = project.neoforge_version
+
+    runs {
+        client {
+            client()
+            gameDirectory = project.file('runs/client')
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            gameDirectory = project.file('runs/server')
+        }
+    }
+
+    mods {
+        wardenlootforge {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    inputs.property 'mod_version', project.version
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand mod_version: project.version
+    }
+    // Preserve the upstream Forge assets while replacing loader- and version-specific data.
+    from('../forge/src/main/resources') {
+        exclude 'META-INF/mods.toml'
+        exclude 'pack.mcmeta'
+        exclude 'wardenlootforge.mixins.json'
+        exclude 'data/forge/**'
+        exclude 'data/curios/tags/items/**'
+        exclude 'data/wardenlootforge/recipes/**'
+        exclude 'data/wardenlootforge/advancements/**'
+        exclude 'data/wardenlootforge/loot_modifiers/**'
+        exclude 'assets/wardenlootforge/lang/en_us.json'
+        exclude 'assets/wardenlootforge/textures/models/armor/sculkerite_layer_1.png.moremcmeta'
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.named('jar', Jar).configure {
+    manifest.attributes(
+        'Specification-Title': 'wardenlootforge',
+        'Specification-Vendor': 'ItsYusei99 (port); nu11une (upstream)',
+        'Implementation-Title': 'Warden Loot NeoForge port',
+        'Implementation-Version': project.version
+    )
+    from('../LICENSE') {
+        rename { "${it}_wardenlootforge" }
+    }
+    from('../NOTICE') {
+        rename { "${it}_wardenlootforge" }
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "wardenlootforge:warden_loot_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/warden"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Warden Loot · NeoForge 1.21.1",
+    "quality_profile": "showcase",
+    "viewBox": [1380, 660],
+    "views": [
+      {
+        "id": "mod-runtime",
+        "label": "Carga y gameplay",
+        "focus": ["runtime", "entry", "registries", "events", "loot"]
+      },
+      {
+        "id": "content-integrations",
+        "label": "Contenido e integraciones",
+        "focus": ["entry", "config", "resources", "loot", "curios"]
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "runtime",
+      "type": "external",
+      "label": "NeoForge / Minecraft",
+      "tag": "runtime",
+      "pos": [40, 300],
+      "size": [170, 80]
+    },
+    {
+      "id": "entry",
+      "type": "backend",
+      "label": "WardenLootForge",
+      "sublabel": "@Mod",
+      "tag": "wardenlootforge",
+      "pos": [290, 300],
+      "size": [180, 80]
+    },
+    {
+      "id": "config",
+      "type": "backend",
+      "label": "WardenLootConfig",
+      "sublabel": "ModConfigSpec · COMMON",
+      "pos": [290, 100],
+      "size": [180, 72]
+    },
+    {
+      "id": "registries",
+      "type": "backend",
+      "label": "Registros diferidos",
+      "sublabel": "items · efecto · tab · codecs GLM",
+      "pos": [570, 300],
+      "size": [190, 80]
+    },
+    {
+      "id": "events",
+      "type": "backend",
+      "label": "WardenLootEvents",
+      "sublabel": "combate · muerte · sonido · sculk",
+      "pos": [570, 500],
+      "size": [190, 80]
+    },
+    {
+      "id": "curios",
+      "type": "external",
+      "label": "Curios API",
+      "sublabel": "slot HEAD · ICurioItem",
+      "pos": [570, 100],
+      "size": [190, 72]
+    },
+    {
+      "id": "loot",
+      "type": "backend",
+      "label": "Loot modifiers",
+      "sublabel": "Warden · sculk · ciudad antigua",
+      "pos": [870, 300],
+      "size": [190, 80]
+    },
+    {
+      "id": "resources",
+      "type": "database",
+      "label": "Recursos 1.21.1",
+      "sublabel": "recetas · datos · assets",
+      "pos": [1160, 100],
+      "size": [200, 80]
+    }
+  ],
+  "connections": [
+    {
+      "id": "runtime-loads-entry",
+      "from": "runtime",
+      "to": "entry",
+      "label": "carga mod",
+      "variant": "emphasis"
+    },
+    {
+      "id": "entry-config",
+      "from": "entry",
+      "to": "config",
+      "label": "registra la config COMMON"
+    },
+    {
+      "id": "entry-registries",
+      "from": "entry",
+      "to": "registries",
+      "label": "registra entradas y codecs",
+      "labelDy": -43,
+      "labelDx": 160
+    },
+    {
+      "id": "entry-events",
+      "from": "entry",
+      "to": "events",
+      "label": "suscribe listeners"
+    },
+    {
+      "id": "entry-curios",
+      "from": "entry",
+      "to": "curios",
+      "label": "IMC · slot HEAD",
+      "fromSide": "right",
+      "toSide": "bottom",
+      "via": [[510, 340], [510, 220], [665, 220]]
+    },
+    {
+      "id": "registries-loot",
+      "from": "registries",
+      "to": "loot",
+      "label": "registra codecs GLM"
+    },
+    {
+      "id": "resources-loot",
+      "from": "resources",
+      "to": "loot",
+      "label": "activa modificadores JSON"
+    },
+    {
+      "id": "events-runtime",
+      "from": "events",
+      "to": "runtime",
+      "label": "aplica efectos al mundo"
+    },
+    {
+      "id": "resources-runtime",
+      "from": "resources",
+      "to": "runtime",
+      "label": "Minecraft carga datapacks y assets",
+      "fromSide": "left",
+      "toSide": "top",
+      "via": [[1110, 140], [1110, 40], [125, 40]]
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Inicialización",
+      "items": [
+        "WardenLootForge registra la config, los ítems, el efecto y los listeners.",
+        "Los codecs de loot modifier se enlazan al mod event bus."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Gameplay",
+      "items": [
+        "Los handlers reaccionan a combate, muerte, sonidos y bloques sculk.",
+        "Los loot modifiers añaden drops de Warden y botín de ciudad antigua."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Contenido",
+      "items": [
+        "Los recursos incluyen recetas, encantamiento, modelos y texturas.",
+        "Curios habilita el accesorio Warden Ears en el slot HEAD."
+      ]
+    }
+  ]
+}

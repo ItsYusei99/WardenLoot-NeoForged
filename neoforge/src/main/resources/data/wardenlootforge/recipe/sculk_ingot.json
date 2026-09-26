@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [" # ", "#$#", " # "],
+  "key": {
+    "#": {"item": "wardenlootforge:sculk_soul"},
+    "$": {"item": "minecraft:iron_ingot"}
+  },
+  "result": {"id": "wardenlootforge:sculk_ingot"}
+}

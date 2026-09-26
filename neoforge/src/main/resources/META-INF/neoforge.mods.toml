@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="Apache-2.0"
+
+[[mods]]
+modId="wardenlootforge"
+version="${mod_version}"
+displayName="Warden Loot"
+authors="ItsYusei99 (NeoForge port); nu11une (upstream)"
+logoFile="wardenloot_icon.png"
+description='''
+A configurable mod adding Warden- and Ancient City-themed armor, tools, trinkets, and loot.
+NeoForge 1.21.1 port based on nu11une's Apache-2.0 Warden Loot project.
+'''
+
+[[dependencies.wardenlootforge]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.249,21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.wardenlootforge]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.wardenlootforge]]
+modId="curios"
+type="required"
+versionRange="[9.5.1,)"
+ordering="AFTER"
+side="BOTH"

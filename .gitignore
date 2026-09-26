@@ -87,3 +87,8 @@ run
 forge/forge*changelog.txt
 
 forge*changelog.txt
+
+# Archify browser evidence is generated locally; the standalone architecture HTML is tracked.
+docs/architecture/*.visual-check.*.png
+docs/architecture/*.visual-check.json
+docs/architecture/*.visual-check.html
