@@ -28,7 +28,7 @@ Open the [interactive architecture map](docs/architecture/wardenloot-neoforge-1.
 
 ## Wiki
 
-Consulta la [guía del mod](docs/wiki/Home.md) para ver el uso de los objetos, equipo, loot, recetas y configuración.
+Read the [mod guide](docs/wiki/Home.md) for item uses, gear bonuses, loot, recipes, and configuration.
 
 ## Versioning
 

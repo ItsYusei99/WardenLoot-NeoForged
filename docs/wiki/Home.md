@@ -1,34 +1,34 @@
 # WardenLoot NeoForged
 
-Guía de la versión NeoForge de Warden Loot. Esta página explica qué hace cada objeto, cómo conseguirlo y cómo configurar el mod.
+This guide explains what the mod's items and abilities do, how to obtain them, and how to configure the port.
 
-## Compatibilidad actual
+## Current compatibility
 
 - Minecraft **1.21.1**
 - NeoForge **21.1.249**
-- **Curios API 9.5.1+1.21.1** requerido en cliente y servidor
+- **Curios API 9.5.1+1.21.1** is required on both client and server
 
-Esta es la versión actualmente probada; otras versiones de Minecraft todavía no están soportadas.
+This is the currently tested target; other Minecraft versions are not supported yet.
 
-## Secciones
+## Guide pages
 
-- [Instalación](Instalacion.md)
-- [Objetos y materiales](Objetos.md)
-- [Armadura y bonificaciones](Armadura-y-bonificaciones.md)
-- [Herramientas y encantamiento](Herramientas-y-encantamiento.md)
-- [Curios y ecolocalización](Ecolocalizacion-y-Curios.md)
-- [Loot y progresión](Loot-y-progresion.md)
-- [Recetas](Recetas.md)
-- [Configuración](Configuracion.md)
-- [Compatibilidad y límites conocidos](Compatibilidad.md)
-- [Créditos y licencia](Creditos-y-licencia.md)
+- [Getting Started](Getting-Started.md)
+- [Items and Materials](Items-and-Materials.md)
+- [Armor and Bonuses](Armor-and-Bonuses.md)
+- [Tools and Enchantments](Tools-and-Enchantments.md)
+- [Curios and Echolocation](Curios-and-Echolocation.md)
+- [Loot and Progression](Loot-and-Progression.md)
+- [Recipes](Recipes.md)
+- [Configuration](Configuration.md)
+- [Compatibility and Known Limitations](Compatibility.md)
+- [Credits and License](Credits-and-License.md)
 
-## Progresión rápida
+## Quick progression
 
-1. Consigue **Consumed Souls** al minar sculk, al encontrar loot de Warden o por los enemigos que mata un Warden.
-2. Combina Consumed Souls con hierro para hacer **Imbued Ingots**.
-3. Mejora herramientas y piezas de armadura de netherite con la plantilla de mejora de netherite y el material indicado.
-4. Consigue o fabrica un **Warden Heart** para crear el **Heartplate**.
-5. Si el Heartplate evita una muerte, queda como **Still Heartplate**. Usa Warden Blood en la mesa de herrería para volver a cargarlo.
+1. Collect **Consumed Souls** from sculk blocks, Warden loot, or creatures killed by a Warden.
+2. Combine Consumed Souls with iron to craft **Imbued Ingots**.
+3. Upgrade netherite tools and most armor pieces with a Netherite Upgrade Smithing Template and the required material.
+4. Obtain or craft a **Warden Heart** to make the **Heartplate**.
+5. If the Heartplate saves you from fatal damage, it becomes a **Still Heartplate**. Use Warden Blood in a smithing table to recharge it.
 
-El proyecto deriva del mod original [Warden Loot de nu11une](https://github.com/nu11une/wardenloot). El port NeoForge lo mantiene ItsYusei99; se conserva la licencia Apache-2.0 y la atribución upstream.
+This port is derived from [Warden Loot by nu11une](https://github.com/nu11une/wardenloot). Its NeoForge port is maintained by ItsYusei99; Apache-2.0 licensing and upstream attribution are retained.

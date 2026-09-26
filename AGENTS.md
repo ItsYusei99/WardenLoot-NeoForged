@@ -4,7 +4,7 @@
 
 See the [interactive system map](docs/architecture/wardenloot-neoforge-1.21.1.html). Its source specification is `docs/architecture/wardenloot-neoforge-1.21.1.architecture.json`.
 
-The Spanish feature guide is maintained in `docs/wiki/` and linked from the root README.
+The English feature guide is maintained in `docs/wiki/` and linked from the root README.
 
 ## Project layout
 
