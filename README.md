@@ -26,6 +26,10 @@ The mod JAR is written to `neoforge/build/libs/wardenlootforge-1.1.3-neoforge-1.
 
 Open the [interactive architecture map](docs/architecture/wardenloot-neoforge-1.21.1.html). Its source specification is `docs/architecture/wardenloot-neoforge-1.21.1.architecture.json`.
 
+## Wiki
+
+Consulta la [guía del mod](docs/wiki/Home.md) para ver el uso de los objetos, equipo, loot, recetas y configuración.
+
 ## Versioning
 
 The `neoforge/` Gradle project currently builds only for Minecraft 1.21.1 and NeoForge 21.1.249. Future ports should use version-specific build modules and must be tested independently before being described as supported.
